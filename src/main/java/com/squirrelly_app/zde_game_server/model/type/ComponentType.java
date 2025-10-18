@@ -1,7 +1,8 @@
-package com.squirrelly_app.zde_game_server.model.card;
+package com.squirrelly_app.zde_game_server.model.type;
 
-public enum ComponentEnum {
+public enum ComponentType {
 
+    SYS, // System / Generic: Used for Upgrade System and Exploit Action Cards
     CPU, // Central Processing Unit: Used for Code Cards
     GPU, // Graphics Processing Unit: Used for Hash Cards
     NIC, // Network Interface Card: Used for Packet Cards
