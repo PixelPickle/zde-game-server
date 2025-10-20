@@ -1,4 +1,4 @@
-package com.squirrelly_app.zde_game_server.model;
+package com.squirrelly_app.zde_game_server.model.system;
 
 import com.squirrelly_app.zde_game_server.model.card.BountyCard;
 import com.squirrelly_app.zde_game_server.model.card.Card;
@@ -20,8 +20,8 @@ public class GameBoard {
     @NotNull private final List<@NotNull BountyCard> currentBountyCards;
     @NotNull private final List<@NotNull BountyCard> bountyCardDiscardPile;
 
-    @NotNull private Map<ComponentType, @NotNull List<ResourceCard>> resourceCardDrawPile;
-    @NotNull private Map<ComponentType, @NotNull List<ResourceCard>> resourceCardDiscardPile;
+    @NotNull private final Map<ComponentType, @NotNull List<ResourceCard>> resourceCardDrawPile;
+    @NotNull private final Map<ComponentType, @NotNull List<ResourceCard>> resourceCardDiscardPile;
 
     @NotNull private final Map<String, @NotNull List<? extends Card>> playerHands;
 

@@ -1,6 +1,6 @@
 package com.squirrelly_app.zde_game_server.factory;
 
-import com.squirrelly_app.zde_game_server.model.Deck;
+import com.squirrelly_app.zde_game_server.model.system.Deck;
 import com.squirrelly_app.zde_game_server.model.card.ResourceCard;
 import com.squirrelly_app.zde_game_server.model.type.ComponentType;
 import org.jetbrains.annotations.NotNull;

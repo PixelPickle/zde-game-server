@@ -1,4 +1,4 @@
-package com.squirrelly_app.zde_game_server.model;
+package com.squirrelly_app.zde_game_server.model.system;
 
 import com.squirrelly_app.zde_game_server.model.card.*;
 import com.squirrelly_app.zde_game_server.model.type.ComponentType;
