@@ -1,0 +1,13 @@
+{
+  "name": "ENCRYPTION",
+  "type": "RESOURCE",
+  "actionEffect": {
+    "actionType": "DEFEND",
+    "timingType": "REACTION",
+    "actionName": "DEFEND",
+    "actionDescription": "When you would be affected by an opponent's AUTHORIZATION HACK, you may discard this ENCRYPTION Card to be immune to the HACK."
+  },
+  "componentType": "GPU",
+  "attackType": null,
+  "defendType": "NIC"
+}

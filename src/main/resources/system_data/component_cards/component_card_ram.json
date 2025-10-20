@@ -1,0 +1,7 @@
+{
+  "name": "MEMORY",
+  "type": "COMPONENT",
+  "componentType": "RAM",
+  "benefitType": "PROGRAM_SIZE",
+  "benefitAmount": 1
+}

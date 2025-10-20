@@ -1,0 +1,7 @@
+{
+  "name": "NETWORK",
+  "type": "COMPONENT",
+  "componentType": "NIC",
+  "benefitType": "GENERATE_AMOUNT",
+  "benefitAmount": 1
+}

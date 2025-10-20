@@ -1,0 +1,7 @@
+{
+  "name": "CPU",
+  "type": "COMPONENT",
+  "componentType": "CPU",
+  "benefitType": "GENERATE_AMOUNT",
+  "benefitAmount": 1
+}

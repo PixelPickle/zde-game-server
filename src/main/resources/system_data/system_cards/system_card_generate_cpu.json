@@ -1,0 +1,11 @@
+{
+  "name": "SOFTWARE",
+  "type": "SYSTEM",
+  "actionEffect": {
+    "actionType": "GENERATE",
+    "timingType": "PROGRAM",
+    "actionName": "GENERATE",
+    "actionDescription": "For each CPU Component installed in your rig, draw one SOFTWARE card."
+  },
+  "componentType": "CPU"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "AUTHORIZATION",
+  "type": "RESOURCE",
+  "actionEffect": {
+    "actionType": "DEFEND",
+    "timingType": "REACTION",
+    "actionName": "DEFEND",
+    "actionDescription": "When you would be affected by an opponent's SOFTWARE HACK, you may discard this AUTHORIZATION Card to be immune to the HACK."
+  },
+  "componentType": "NIC",
+  "attackType": null,
+  "defendType": "CPU"
+}

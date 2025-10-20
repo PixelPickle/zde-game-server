@@ -1,5 +1,6 @@
 package com.squirrelly_app.zde_game_server.model.card;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.squirrelly_app.zde_game_server.model.card_addon.ActionEffect;
 import com.squirrelly_app.zde_game_server.model.type.CardType;
 import com.squirrelly_app.zde_game_server.model.type.ComponentType;
@@ -11,13 +12,14 @@ public class ResourceCard extends ActionCard {
     @Nullable private final ComponentType attackType;
     @Nullable private final ComponentType defendType;
 
-    public ResourceCard(@NotNull String name, @NotNull CardType type, @NotNull ActionEffect actionEffect, @NotNull ComponentType componentType) {
-        super(name, type, actionEffect, componentType);
-        this.attackType = null;
-        this.defendType = null;
-    }
-
-    public ResourceCard(@NotNull String name, @NotNull CardType type, @NotNull ActionEffect actionEffect, @NotNull ComponentType componentType, @Nullable ComponentType attackType, @Nullable ComponentType defendType) {
+    public ResourceCard(
+            @NotNull @JsonProperty("name") String name,
+            @NotNull @JsonProperty("type") CardType type,
+            @NotNull @JsonProperty("actionEffect") ActionEffect actionEffect,
+            @NotNull @JsonProperty("componentType") ComponentType componentType,
+            @Nullable @JsonProperty("attackType") ComponentType attackType,
+            @Nullable @JsonProperty("defendType") ComponentType defendType
+    ) {
         super(name, type, actionEffect, componentType);
         this.attackType = attackType;
         this.defendType = defendType;

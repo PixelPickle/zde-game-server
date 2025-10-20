@@ -1,0 +1,13 @@
+{
+  "name": "SOFTWARE",
+  "type": "RESOURCE",
+  "actionEffect": {
+    "actionType": "DEFEND",
+    "timingType": "REACTION",
+    "actionName": "DEFEND",
+    "actionDescription": "When you would be affected by an opponent's ENCRYPTION HACK, you may discard this SOFTWARE Card to be immune to the HACK."
+  },
+  "componentType": "CPU",
+  "attackType": null,
+  "defendType": "GPU"
+}

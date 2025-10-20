@@ -1,0 +1,13 @@
+{
+  "name": "SOFTWARE",
+  "type": "RESOURCE",
+  "actionEffect": {
+    "actionType": "INTERRUPT",
+    "timingType": "PROGRAM",
+    "actionName": "HACK",
+    "actionDescription": "When you play this SOFTWARE Card as an Action, opponents may not take the 'AUTHORIZATION' Action to generate resources. Additionally, their NETWORK Components are disabled."
+  },
+  "componentType": "CPU",
+  "attackType": "NIC",
+  "defendType": null
+}

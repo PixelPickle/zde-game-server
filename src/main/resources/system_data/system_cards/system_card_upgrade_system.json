@@ -1,0 +1,11 @@
+{
+  "name": "UPGRADE RIG",
+  "type": "SYSTEM",
+  "actionEffect": {
+    "actionType": "SYSTEM_UPGRADE",
+    "timingType": "PROGRAM",
+    "actionName": "UPGRADE RIG",
+    "actionDescription": "You may add any number of Component Cards from your hand to your rig. You may not play any other Action Cards this turn."
+  },
+  "componentType": "SYS"
+}

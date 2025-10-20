@@ -1,0 +1,17 @@
+{
+  "name": "TARGET Q",
+  "type": "BOUNTY",
+  "bruteForceRequirements": [
+    { "componentType": "RAM", "minimum": 1 },
+    { "componentType": "HDD", "minimum": 2 },
+    { "componentType": "CPU", "minimum": 4 },
+    { "componentType": "GPU", "minimum": 3 },
+    { "componentType": "NIC", "minimum": 2 }
+  ],
+  "bruteForceRewardAmount": 4,
+  "vulnerabilities": [
+    { "componentRequirement": { "componentType": "CPU", "minimum": 3 }, "rewardAmount": 3 },
+    { "componentRequirement": { "componentType": "GPU", "minimum": 2 }, "rewardAmount": 2 },
+    { "componentRequirement": { "componentType": "NIC", "minimum": 1 }, "rewardAmount": 1 }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "ENCRYPTION",
+  "type": "RESOURCE",
+  "actionEffect": {
+    "actionType": "INTERRUPT",
+    "timingType": "PROGRAM",
+    "actionName": "HACK",
+    "actionDescription": "When you play this ENCRYPTION Card as an Action, opponents may not take the 'SOFTWARE' Action to generate resources. Additionally, their CPU Components are disabled."
+  },
+  "componentType": "GPU",
+  "attackType": "CPU",
+  "defendType": null
+}

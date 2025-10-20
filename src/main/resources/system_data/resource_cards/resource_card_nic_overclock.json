@@ -1,0 +1,13 @@
+{
+  "name": "AUTHORIZATION",
+  "type": "RESOURCE",
+  "actionEffect": {
+    "actionType": "OVERCLOCK",
+    "timingType": "ENHANCE",
+    "actionName": "OVERCLOCK",
+    "actionDescription": "When you take the 'EXPLOIT TARGET' Action, you may discard this AUTHORIZATION Card to boost your NIC count by one."
+  },
+  "componentType": "NIC",
+  "attackType": null,
+  "defendType": null
+}
