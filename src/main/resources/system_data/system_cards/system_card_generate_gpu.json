@@ -1,0 +1,11 @@
+{
+  "name": "ENCRYPTION",
+  "type": "SYSTEM",
+  "actionEffect": {
+    "actionType": "GENERATE",
+    "timingType": "PROGRAM",
+    "actionName": "GENERATE",
+    "actionDescription": "For each GPU Component installed in your rig, draw one ENCRYPTION card."
+  },
+  "componentType": "GPU"
+}

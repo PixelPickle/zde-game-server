@@ -1,0 +1,7 @@
+{
+  "name": "GPU",
+  "type": "COMPONENT",
+  "componentType": "GPU",
+  "benefitType": "GENERATE_AMOUNT",
+  "benefitAmount": 1
+}

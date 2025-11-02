@@ -1,0 +1,13 @@
+{
+  "name": "AUTHORIZATION",
+  "type": "RESOURCE",
+  "actionEffect": {
+    "actionType": "INTERRUPT",
+    "timingType": "PROGRAM",
+    "actionName": "HACK",
+    "actionDescription": "When you play this AUTHORIZATION Card as an Action, opponents may not take the 'ENCRYPTION' Action to generate resources. Additionally, their GPU Components are disabled."
+  },
+  "componentType": "NIC",
+  "attackType": "GPU",
+  "defendType": null
+}

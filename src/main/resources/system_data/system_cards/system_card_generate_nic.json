@@ -1,0 +1,11 @@
+{
+  "name": "AUTHORIZATION",
+  "type": "SYSTEM",
+  "actionEffect": {
+    "actionType": "GENERATE",
+    "timingType": "PROGRAM",
+    "actionName": "GENERATE",
+    "actionDescription": "For each NIC Component installed in your rig, draw one AUTHORIZATION card."
+  },
+  "componentType": "NIC"
+}

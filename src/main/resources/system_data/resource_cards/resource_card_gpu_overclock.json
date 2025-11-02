@@ -1,0 +1,13 @@
+{
+  "name": "ENCRYPTION",
+  "type": "RESOURCE",
+  "actionEffect": {
+    "actionType": "OVERCLOCK",
+    "timingType": "ENHANCE",
+    "actionName": "OVERCLOCK",
+    "actionDescription": "When you take the 'EXPLOIT TARGET' Action, you may discard this ENCRYPTION Card to boost your GPU count by one."
+  },
+  "componentType": "GPU",
+  "attackType": null,
+  "defendType": null
+}
