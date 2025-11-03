@@ -11,28 +11,34 @@ public class Lobby {
 
     @NotNull private final Set<String> players;
 
-    public Lobby(@NotNull String player) {
+    public Lobby(@NotNull String playerId) {
+
+        if (!StringUtils.hasText(playerId)) {
+            throw new InvalidPlayerException("Player ID must be provided to create a lobby.");
+        }
+
         this.players = new HashSet<>();
-        this.players.add(player);
+        this.players.add(playerId);
+
     }
 
-    public void addPlayer(@NotNull String player) {
+    public void addPlayer(@NotNull String playerId) {
 
-        if (!StringUtils.hasText(player)) {
+        if (!StringUtils.hasText(playerId)) {
             throw new InvalidPlayerException("Player ID must be provided to join a lobby.");
         }
 
-        this.players.add(player);
+        this.players.add(playerId);
 
     }
 
-    public void removePlayer(@NotNull String player) {
+    public void removePlayer(@NotNull String playerId) {
 
-        if (!StringUtils.hasText(player)) {
+        if (!StringUtils.hasText(playerId)) {
             throw new InvalidPlayerException("Player ID must be provided to leave a lobby.");
         }
 
-        this.players.remove(player);
+        this.players.remove(playerId);
 
     }
 

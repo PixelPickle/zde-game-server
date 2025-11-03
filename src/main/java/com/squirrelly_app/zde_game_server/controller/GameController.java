@@ -1,13 +1,13 @@
 package com.squirrelly_app.zde_game_server.controller;
 
+import com.squirrelly_app.zde_game_server.model.data_contract.GameStateSnapshot;
+import com.squirrelly_app.zde_game_server.model.request_contract.AuthorizedRequest;
 import com.squirrelly_app.zde_game_server.service.GameService;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/game")
@@ -19,10 +19,16 @@ public class GameController {
         this.gameService = gameService;
     }
 
-    @PostMapping(value = "", consumes = "text/plain")
-    public ResponseEntity<Void> startGame(@RequestBody String lobbyId) {
-        gameService.startGame(lobbyId);
+    @PostMapping(value = "/{gameId}", consumes = MediaType.TEXT_PLAIN_VALUE)
+    public ResponseEntity<Void> startGame(@NotNull @PathVariable String gameId, @RequestBody @NotNull AuthorizedRequest authorizedRequest) {
+        gameService.startGame(gameId, authorizedRequest);
         return new ResponseEntity<>(HttpStatus.CREATED);
+    }
+
+    @GetMapping(value = "/{gameId}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<GameStateSnapshot> getGameStateSnapshot(@NotNull @PathVariable String gameId) {
+        GameStateSnapshot gameStateSnapshot = gameService.getGameStateSnapshot(gameId);
+        return new ResponseEntity<>(gameStateSnapshot, HttpStatus.OK);
     }
 
 }
