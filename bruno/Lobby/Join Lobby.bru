@@ -1,0 +1,26 @@
+meta {
+  name: Join Lobby
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:8080/api/lobby/:lobbyId
+  body: json
+  auth: inherit
+}
+
+params:path {
+  lobbyId: a92e3cc7-cb9e-47dd-8bfd-d02c3a8ab4f2
+}
+
+body:json {
+  {
+    "playerId": "testPlayerIdTwo"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

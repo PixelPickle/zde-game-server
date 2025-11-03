@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "Zero Day Exploit",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}
