@@ -9,6 +9,9 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeoutException;
+
 @RestController
 @RequestMapping("/api/game")
 public class GameController {
@@ -19,8 +22,8 @@ public class GameController {
         this.gameService = gameService;
     }
 
-    @PostMapping(value = "/{gameId}", consumes = MediaType.TEXT_PLAIN_VALUE)
-    public ResponseEntity<Void> startGame(@NotNull @PathVariable String gameId, @RequestBody @NotNull AuthorizedRequest authorizedRequest) {
+    @PostMapping(value = "/{gameId}", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Void> startGame(@NotNull @PathVariable String gameId, @RequestBody @NotNull AuthorizedRequest authorizedRequest) throws ExecutionException, InterruptedException, TimeoutException {
         gameService.startGame(gameId, authorizedRequest);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }

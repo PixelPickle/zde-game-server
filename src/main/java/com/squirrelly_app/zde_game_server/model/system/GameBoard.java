@@ -68,14 +68,9 @@ public class GameBoard {
         exploitCards.addAll(this.exploitCardDrawPile);
         exploitCards.addAll(this.exploitCardDiscardPile);
 
-        if (this.currentExploitCard != null) {
-            exploitCards.add(this.currentExploitCard);
-        }
-
         Collections.shuffle(exploitCards);
 
         this.exploitCardDrawPile = exploitCards;
-        this.currentExploitCard = null;
         this.exploitCardDiscardPile.clear();
 
     }
@@ -87,12 +82,9 @@ public class GameBoard {
         bountyCards.addAll(this.bountyCardDrawPile);
         bountyCards.addAll(this.bountyCardDiscardPile);
 
-        bountyCards.addAll(this.currentBountyCards);
-
         Collections.shuffle(bountyCards);
 
         this.bountyCardDrawPile = bountyCards;
-        this.currentBountyCards.clear();
         this.bountyCardDiscardPile.clear();
 
     }
@@ -109,6 +101,14 @@ public class GameBoard {
         this.resourceCardDrawPile.put(componentType, resourceCards);
         this.resourceCardDiscardPile.put(componentType, new ArrayList<>());
 
+    }
+
+    public void dealExploitCard() {
+        // TODO: Implement Deal Exploit Card
+    }
+
+    public void dealBountyCards() {
+        // TODO: Implement Deal Bounty Cards
     }
 
 }

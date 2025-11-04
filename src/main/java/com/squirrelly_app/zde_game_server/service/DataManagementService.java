@@ -1,9 +1,11 @@
 package com.squirrelly_app.zde_game_server.service;
 
 import com.squirrelly_app.zde_game_server.exception.InvalidLobbyException;
+import com.squirrelly_app.zde_game_server.exception.InvalidPlayerException;
 import com.squirrelly_app.zde_game_server.model.system.Game;
 import com.squirrelly_app.zde_game_server.model.system.Lobby;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -50,6 +52,36 @@ public class DataManagementService {
         }
 
         return lobby;
+
+    }
+
+    public @Nullable Lobby findLobbyByPlayerId(@NotNull String playerId) {
+
+        if (!StringUtils.hasText(playerId)) {
+            throw new InvalidPlayerException("Player ID must be provided to read a lobby.");
+        }
+
+        for (Lobby lobby : lobbies.values()) {
+            if (lobby.getPlayers().contains(playerId)) {
+                return lobby;
+            }
+        }
+
+        return null;
+
+    }
+
+    public void deleteLobby(@NotNull String lobbyId) {
+
+        if (!StringUtils.hasText(lobbyId)) {
+            throw new InvalidLobbyException("Lobby ID must be provided to delete a lobby.");
+        }
+
+        if (!lobbies.containsKey(lobbyId)) {
+            throw new InvalidLobbyException("Lobby with ID " + lobbyId + " does not exist.");
+        }
+
+        lobbies.remove(lobbyId);
 
     }
 

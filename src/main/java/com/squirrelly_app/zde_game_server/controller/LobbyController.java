@@ -9,6 +9,9 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeoutException;
+
 @RestController
 @RequestMapping("/api/lobby")
 public class LobbyController {
@@ -20,19 +23,19 @@ public class LobbyController {
     }
 
     @PostMapping(value = "", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.TEXT_PLAIN_VALUE)
-    public ResponseEntity<String> createLobby(@NotNull @RequestBody AuthorizedRequest request) {
+    public ResponseEntity<String> createLobby(@NotNull @RequestBody AuthorizedRequest request) throws ExecutionException, InterruptedException, TimeoutException {
         String lobbyId = lobbyService.createLobby(request);
         return new ResponseEntity<>(lobbyId, HttpStatus.CREATED);
     }
 
     @PostMapping(value = "/{lobbyId}", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Void> joinLobby(@NotNull @PathVariable String lobbyId, @NotNull @RequestBody AuthorizedRequest request) {
+    public ResponseEntity<Void> joinLobby(@NotNull @PathVariable String lobbyId, @NotNull @RequestBody AuthorizedRequest request) throws ExecutionException, InterruptedException, TimeoutException {
         lobbyService.joinLobby(lobbyId, request);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @DeleteMapping(value = "/{lobbyId}/{playerId}")
-    public ResponseEntity<Void> leaveLobby(@NotNull @PathVariable String lobbyId, @NotNull @PathVariable String playerId, @NotNull @RequestBody AuthorizedRequest request) {
+    public ResponseEntity<Void> leaveLobby(@NotNull @PathVariable String lobbyId, @NotNull @PathVariable String playerId, @NotNull @RequestBody AuthorizedRequest request) throws ExecutionException, InterruptedException, TimeoutException {
         lobbyService.leaveLobby(lobbyId, playerId, request);
         return new ResponseEntity<>(HttpStatus.OK);
     }

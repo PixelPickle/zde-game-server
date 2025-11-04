@@ -12,6 +12,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
+
 @Service
 public class GameService {
 
@@ -32,7 +36,7 @@ public class GameService {
 
     }
 
-    public void startGame(@NotNull String lobbyId, @NotNull AuthorizedRequest authorizedRequest) {
+    public void startGame(@NotNull String lobbyId, @NotNull AuthorizedRequest authorizedRequest) throws ExecutionException, InterruptedException, TimeoutException {
 
         if (!StringUtils.hasText(lobbyId)) {
             throw new InvalidLobbyException("Lobby ID must be provided to start a game.");
@@ -40,7 +44,7 @@ public class GameService {
 
         GameTask gameTask = new GameTask(GameTaskType.START_GAME, authorizedRequest.playerId(), lobbyId);
 
-        gameExecutorService.addTask(gameTask);
+        gameExecutorService.addTask(gameTask).get(2, TimeUnit.SECONDS);
 
         logger.info("Game started for lobby ID: {}", lobbyId);
 

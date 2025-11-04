@@ -14,6 +14,9 @@ import org.springframework.util.StringUtils;
 
 import java.util.Objects;
 import java.util.UUID;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 @Service
 public class LobbyService {
@@ -35,7 +38,7 @@ public class LobbyService {
 
     }
 
-    public String createLobby(@NotNull AuthorizedRequest request) {
+    public String createLobby(@NotNull AuthorizedRequest request) throws ExecutionException, InterruptedException, TimeoutException {
 
         if (!StringUtils.hasText(request.playerId())) {
             throw new InvalidPlayerException("Player ID must be provided to create a lobby.");
@@ -45,7 +48,7 @@ public class LobbyService {
 
         GameTask gameTask = new GameTask(GameTaskType.CREATE_LOBBY, request.playerId(), lobbyId);
 
-        gameExecutorService.addTask(gameTask);
+        gameExecutorService.addTask(gameTask).get(2, TimeUnit.SECONDS);
 
         logger.info("Lobby {} created with initial player: {}", lobbyId, request.playerId());
 
@@ -53,7 +56,7 @@ public class LobbyService {
 
     }
 
-    public void joinLobby(@NotNull String lobbyId, @NotNull AuthorizedRequest request) {
+    public void joinLobby(@NotNull String lobbyId, @NotNull AuthorizedRequest request) throws ExecutionException, InterruptedException, TimeoutException {
 
         if (!StringUtils.hasText(lobbyId)) {
             throw new InvalidLobbyException("Lobby ID must be provided to join a lobby.");
@@ -65,13 +68,13 @@ public class LobbyService {
 
         GameTask gameTask = new GameTask(GameTaskType.JOIN_LOBBY, request.playerId(), lobbyId);
 
-        gameExecutorService.addTask(gameTask);
+        gameExecutorService.addTask(gameTask).get(2, TimeUnit.SECONDS);
 
         logger.info("Player {} joined lobby {}", request.playerId(), lobbyId);
 
     }
 
-    public void leaveLobby(@NotNull String lobbyId, @NotNull String playerId, @NotNull AuthorizedRequest request) {
+    public void leaveLobby(@NotNull String lobbyId, @NotNull String playerId, @NotNull AuthorizedRequest request) throws ExecutionException, InterruptedException, TimeoutException {
 
         if (!StringUtils.hasText(lobbyId)) {
             throw new InvalidLobbyException("Lobby ID must be provided to leave a lobby.");
@@ -87,7 +90,7 @@ public class LobbyService {
 
         GameTask gameTask = new GameTask(GameTaskType.LEAVE_LOBBY, playerId, lobbyId);
 
-        gameExecutorService.addTask(gameTask);
+        gameExecutorService.addTask(gameTask).get(2, TimeUnit.SECONDS);
 
         logger.info("Player {} left lobby {}", playerId, lobbyId);
 

@@ -6,5 +6,6 @@ public enum GameTaskType {
     JOIN_LOBBY,
     LEAVE_LOBBY,
     START_GAME,
+    BEGIN_ROUND,
 
 }
