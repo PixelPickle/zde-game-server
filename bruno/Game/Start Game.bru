@@ -1,0 +1,26 @@
+meta {
+  name: Start Game
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:8080/api/game/:gameId
+  body: json
+  auth: inherit
+}
+
+params:path {
+  gameId: c54f639b-1ceb-4f55-ae85-64fcac99754e
+}
+
+body:json {
+  {
+    "playerId": "testPlayerIdOne"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

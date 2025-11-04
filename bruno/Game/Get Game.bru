@@ -1,0 +1,20 @@
+meta {
+  name: Get Game
+  type: http
+  seq: 2
+}
+
+get {
+  url: http://localhost:8080/api/game/:gameId
+  body: none
+  auth: inherit
+}
+
+params:path {
+  gameId: c54f639b-1ceb-4f55-ae85-64fcac99754e
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
